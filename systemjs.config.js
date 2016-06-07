@@ -5,7 +5,8 @@
  */
 (function(global) {
 
-  // map tells the System loader where to look for things
+  // Map tells the System loader where to look for things (where to look when we import a module)
+  // It allows you to map a module alias to a location or page
   var map = {
     'app':                        'app', // 'dist',
     'rxjs':                       'node_modules/rxjs',
@@ -13,7 +14,7 @@
     '@angular':                   'node_modules/@angular'
   };
 
-  // packages tells the System loader how to load when no filename and/or no extension
+  // Packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
@@ -29,7 +30,7 @@
     '@angular/platform-browser-dynamic',
     '@angular/router-deprecated',
     '@angular/testing',
-    '@angular/upgrade',
+    '@angular/upgrade'
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
