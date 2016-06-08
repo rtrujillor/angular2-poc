@@ -1,6 +1,10 @@
 import {Component} from '@angular/core';
-import { Hero } from './hero'
-import {HeroDetailComponent} from './hero-detail.component'
+
+import { Hero } from './hero';
+import {HeroDetailComponent} from './hero-detail.component';
+import { HeroService } from './hero.service';
+
+import { OnInit } from '@angular/core';
 
 @Component({
 
@@ -71,14 +75,42 @@ import {HeroDetailComponent} from './hero-detail.component'
       }
     `],
 
-    directives: [HeroDetailComponent]
+    directives: [HeroDetailComponent] ,
+
+  /**
+   * The providers array tells Angular to create a fresh instance of the HeroService when it creates a new AppComponent.
+   * The AppComponent can use that service to get heroes and so can every child component of its component tree
+   */
+    providers: [HeroService]
 
 })
-export class AppComponent {
+
+/**
+ * interface OnInit : Angular will call it if we implement the Angular ngOnInit Lifecycle Hook.
+ * Angular offers a number of interfaces for tapping into critical moments in the component lifecycle:
+ * at creation, after each change, and at its eventual destruction.
+ */
+export class AppComponent implements OnInit {
 
   title = 'Tour of heroes';
   selectedHero: Hero;
-  public heroes = HEROES;
+  heroes : Hero[];
+
+  constructor(private heroService : HeroService){ }
+
+  /**
+   * Each interface has a single method. When the component implements that method,
+   * Angular calls it at the appropriate time.
+   */
+  ngOnInit() {
+    this.getHeroes();
+  }
+
+  getHeroes(){
+
+    this.heroService.getHeroes()
+      .then( heroesList => this.heroes = heroesList);
+  }
 
   onSelect(hero: Hero){
     this.selectedHero = hero;
@@ -86,16 +118,4 @@ export class AppComponent {
 }
 
 
-var HEROES : Hero[] = [
-  { "id": 11, "name": "Mr. Nice" },
-  { "id": 12, "name": "Narco" },
-  { "id": 13, "name": "Bombasto" },
-  { "id": 14, "name": "Celeritas" },
-  { "id": 15, "name": "Magneta" },
-  { "id": 16, "name": "RubberMan" },
-  { "id": 17, "name": "Dynama" },
-  { "id": 18, "name": "Dr IQ" },
-  { "id": 19, "name": "Magma" },
-  { "id": 20, "name": "Tornado" }
-];
 
