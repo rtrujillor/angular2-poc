@@ -1,6 +1,5 @@
 /* tslint:disable:no-unused-variable */
 import { AppComponent } from './app.component';
-import { HeroService } from './hero.service';
 
 import {
   expect, it, iit, xit,
@@ -27,7 +26,7 @@ describe('Smoke test', () => {
 
 describe('AppComponent with new', function () {
   it('should instantiate component', () => {
-    expect(new AppComponent(new HeroService())).toBeDefined('Whoopie!');
+    expect(new AppComponent()).toBeDefined('Whoopie!');
   });
 });
 

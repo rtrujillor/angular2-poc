@@ -1,5 +1,10 @@
 <html>
 <head>
+  <!-- We must add a <base href> element tag to the index.html to make pushState routing work.
+  The browser also needs the base href value to prefix relative URLs when downloading and linking to css files,
+  scripts, and images.-->
+  <base href="/">
+
   <title>Angular 2 QuickStart</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +31,9 @@
 </head>
 
 <body>
-<my-app>Loading...</my-app>
+
+  <!-- Inserting the app tag -->
+  <my-app>Loading...</my-app>
 
 </body>
 </html>

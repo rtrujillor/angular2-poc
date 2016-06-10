@@ -1,120 +1,76 @@
+/**
+ * Main App Component. The App's execution workflow start here
+ */
 import {Component} from '@angular/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated'
 
-import { Hero } from './hero';
-import {HeroDetailComponent} from './hero-detail.component';
 import { HeroService } from './hero.service';
+import {HeroesComponent} from "./heroes.component";
+import {DashboardComponent} from "./dashboard.component";
+import {HeroDetailComponent} from "./hero-detail.component";
 
-import { OnInit } from '@angular/core';
+/**
+ * Defining the app's router
+ * RouteConfig tell the router which views to display when a user clicks a link or pastes a URL into the browser address bar.
+ * Takes an array of route definitions
+ */
+@RouteConfig([
+    {
+        // the router matches this route's path to the URL in the browser address bar
+        path : '/heroes',
+        // the official name of the route; it must begin with a capital letter to avoid confusion with the path
+        name : 'Heroes',
+        // the component that the router should create when navigating to this route
+        component : HeroesComponent
+    },
+    {
+        path : '/dashboard',
+        name : 'Dashboard',
+        component : DashboardComponent,
+        // The router will display the dashboard when the browser URL doesn't match an existing route
+        useAsDefault : true
+    },
+    {
+        path : '/detail/:id',
+        name : 'HeroDetail',
+        component : HeroDetailComponent
+    }
+])
+
 
 @Component({
-
     selector: 'my-app',
 
     template: `
-      <h1>{{title}}</h1>
+        <h1>{{title}}</h1>
 
-      <h2>My Heroes</h2>
-      <ul class="heroes">
-        <li *ngFor="let hero of heroes"
-          [class.selected]="hero === selectedHero"
-          on-click="onSelect(hero)">
-          <span class="badge">{{hero.id}}</span> {{hero.name}}
-        </li>
-      </ul>
+        <nav>
+            <a [routerLink]="['Dashboard']">Dashboard</a>
 
-      <my-hero-detail [hero]="selectedHero">Hero Details...</my-hero-detail>
+            <!-- If we paste the path, /heroes, into the browser address bar,
+            the router should match it to the 'Heroes' route and display the HeroesComponent. But where? -->
+            <a [routerLink]="['Heroes']">Heroes</a>
+        </nav>
+
+        <!-- We have to tell it where by adding <router-outlet> marker tags to the bottom of the template.
+            RouterOutlet is one of the ROUTER_DIRECTIVES.
+            The router displays each component immediately below the <router-outlet> as we navigate through the application. -->
+        <router-outlet></router-outlet>
     `,
 
-    styles: [`
-      .selected {
-        background-color: #CFD8DC !important;
-        color: white;
-      }
-      .heroes {
-        margin: 0 0 2em 0;
-        list-style-type: none;
-        padding: 0;
-        width: 15em;
-      }
-      .heroes li {
-        cursor: pointer;
-        position: relative;
-        left: 0;
-        background-color: #EEE;
-        margin: .5em;
-        padding: .3em 0;
-        height: 1.6em;
-        border-radius: 4px;
-      }
-      .heroes li.selected:hover {
-        background-color: #BBD8DC !important;
-        color: white;
-      }
-      .heroes li:hover {
-        color: #607D8B;
-        background-color: #DDD;
-        left: .1em;
-      }
-      .heroes .text {
-        position: relative;
-        top: -3px;
-      }
-      .heroes .badge {
-        display: inline-block;
-        font-size: small;
-        color: white;
-        padding: 0.8em 0.7em 0 0.7em;
-        background-color: #607D8B;
-        line-height: 1em;
-        position: relative;
-        left: -1px;
-        top: -4px;
-        height: 1.8em;
-        margin-right: .8em;
-        border-radius: 4px 0 0 4px;
-      }
-    `],
+    styles: [``],
 
-    directives: [HeroDetailComponent] ,
+    directives: [ROUTER_DIRECTIVES] ,
 
-  /**
-   * The providers array tells Angular to create a fresh instance of the HeroService when it creates a new AppComponent.
-   * The AppComponent can use that service to get heroes and so can every child component of its component tree
-   */
-    providers: [HeroService]
+    providers: [HeroService , ROUTER_PROVIDERS]
 
 })
 
-/**
- * interface OnInit : Angular will call it if we implement the Angular ngOnInit Lifecycle Hook.
- * Angular offers a number of interfaces for tapping into critical moments in the component lifecycle:
- * at creation, after each change, and at its eventual destruction.
- */
-export class AppComponent implements OnInit {
+export class AppComponent{
 
   title = 'Tour of heroes';
-  selectedHero: Hero;
-  heroes : Hero[];
 
-  constructor(private heroService : HeroService){ }
-
-  /**
-   * Each interface has a single method. When the component implements that method,
-   * Angular calls it at the appropriate time.
-   */
-  ngOnInit() {
-    this.getHeroes();
-  }
-
-  getHeroes(){
-
-    this.heroService.getHeroes()
-      .then( heroesList => this.heroes = heroesList);
-  }
-
-  onSelect(hero: Hero){
-    this.selectedHero = hero;
-  }
+  constructor(){ }
 }
 
 
