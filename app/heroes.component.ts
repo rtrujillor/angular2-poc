@@ -1,9 +1,9 @@
 import {Component , OnInit} from '@angular/core';
-import {Router} from '@angular/router-deprecated'
+import {Router} from '@angular/router-deprecated';
 
 import { Hero } from './hero';
 import {HeroDetailComponent} from './hero-detail.component';
-import { HeroService } from './hero.service';
+import { HeroService } from './hero.service.ts';
 
 @Component({
 
@@ -27,12 +27,12 @@ import { HeroService } from './hero.service';
 export class HeroesComponent implements OnInit {
 
   selectedHero: Hero;
-  heroes : Hero[];
+  heroes: Hero[];
 
   constructor(
-      private heroService : HeroService ,
-      private router : Router
-  ){ }
+      private heroService: HeroService ,
+      private router: Router
+  ) { }
 
   /**
    * Each interface has a single method. When the component implements that method,
@@ -42,16 +42,16 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  getHeroes(){
+  getHeroes() {
     this.heroService.getHeroes()
       .then( heroesList => this.heroes = heroesList);
   }
 
-  onSelect(hero: Hero){
+  onSelect(hero: Hero) {
     this.selectedHero = hero;
   }
 
-  gotoDetail(){
+  gotoDetail() {
     this.router.navigate(['HeroDetail' , { id : this.selectedHero.id}]);
   }
 }

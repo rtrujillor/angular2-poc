@@ -2,12 +2,12 @@
  * Main App Component. The App's execution workflow start here
  */
 import {Component} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated'
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
-import { HeroService } from './hero.service';
-import {HeroesComponent} from "./heroes.component";
-import {DashboardComponent} from "./dashboard.component";
-import {HeroDetailComponent} from "./hero-detail.component";
+import { HeroService } from './hero.service.ts';
+import {HeroesComponent} from './heroes.component';
+import {DashboardComponent} from './dashboard.component';
+import {HeroDetailComponent} from './hero-detail.component';
 
 /**
  * Defining the app's router
@@ -37,7 +37,12 @@ import {HeroDetailComponent} from "./hero-detail.component";
     }
 ])
 
-
+/**
+ * The class has one annotation @Component
+ * They are a declarative way to add metadata to code
+ * Annotations are not available in browser’s of today, which means we need to transpile it to something
+ * that does run in current browsers.
+ */
 @Component({
     selector: 'my-app',
 
@@ -66,11 +71,11 @@ import {HeroDetailComponent} from "./hero-detail.component";
 
 })
 
-export class AppComponent{
+export class AppComponent {
 
   title = 'Tour of heroes';
 
-  constructor(){ }
+  constructor() { }
 }
 
 

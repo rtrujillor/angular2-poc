@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HEROES } from './mock-heroes'
+import { HEROES } from './mock-heroes';
 
 /**
  * TypeScript sees the @Injectable() decorator and emits metadata about our service,
@@ -7,11 +7,11 @@ import { HEROES } from './mock-heroes'
  */
 @Injectable()
 export class  HeroService {
-  getHeroes(){
+  getHeroes() {
     return Promise.resolve(HEROES);
   }
 
-  getHero2( id : number ){
+  getHero2( id: number ) {
     return Promise.resolve(HEROES.filter(hero => hero.id === id)[0]);
   }
 

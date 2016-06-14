@@ -1,8 +1,8 @@
 import {Component , OnInit} from '@angular/core';
-import {Router} from '@angular/router-deprecated'
+import {Router} from '@angular/router-deprecated';
 
-import {Hero} from './hero'
-import {HeroService} from './hero.service'
+import {Hero} from './hero';
+import {HeroService} from './hero.service.ts';
 
 @Component({
     selector: 'my-dashboard',
@@ -10,29 +10,29 @@ import {HeroService} from './hero.service'
     styleUrls: ['app/dashboard.component.css']
 })
 
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
 
-    heroes : Hero[] = [];
+    heroes: Hero[] = [];
 
     /**
      * Injecting services in the constructor
      * @param heroService
      */
     constructor(
-        private heroService : HeroService ,
-        private router : Router ) {
+        private heroService: HeroService ,
+        private router: Router ) {
 
     }
 
     /**
      * Calling the service on a Lifecycle hook , when the component has been initialized
      */
-    ngOnInit(){
+    ngOnInit() {
         this.heroService.getHeroes()
-            .then( heroes => this.heroes = heroes.slice(1,5));
+            .then( heroes => this.heroes = heroes.slice(1, 5));
     }
 
-    gotoDetail( hero : Hero ){
+    gotoDetail( hero: Hero ) {
 
         /**
          * Set a route link parameters array
