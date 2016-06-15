@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/repos/5761486356f44e006d006443/badges/5eb55389e31b6298494f/gpa.svg)](https://codeclimate.com/repos/5761486356f44e006d006443/feed)
+
 # Angular 2 QuickStart Source
 
 This repository holds the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
