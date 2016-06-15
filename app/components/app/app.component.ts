@@ -3,7 +3,6 @@
  */
 import {Component} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
-import { HeroService } from './../../services/hero.service';
 import {HeroesComponent} from "./../heroes/heroes.component";
 import {DashboardComponent} from "./../dashboard/dashboard.component";
 import {HeroDetailComponent} from "./../hero-detail/hero-detail.component";
@@ -44,30 +43,9 @@ import {HeroDetailComponent} from "./../hero-detail/hero-detail.component";
  */
 @Component({
     selector: 'my-app',
-
-    template: `
-        <h1>{{title}}</h1>
-
-        <nav>
-            <a [routerLink]="['Dashboard']">Dashboard</a>
-
-            <!-- If we paste the path, /heroes, into the browser address bar,
-            the router should match it to the 'Heroes' route and display the HeroesComponent. But where? -->
-            <a [routerLink]="['Heroes']">Heroes</a>
-        </nav>
-
-        <!-- We have to tell it where by adding <router-outlet> marker tags to the bottom of the template.
-            RouterOutlet is one of the ROUTER_DIRECTIVES.
-            The router displays each component immediately below the <router-outlet> as we navigate through the application. -->
-        <router-outlet></router-outlet>
-    `,
-
-    styles: [``],
-
+    templateUrl: 'app/components/app/app.component.html',
     directives: [ROUTER_DIRECTIVES] ,
-
-    providers: [HeroService , ROUTER_PROVIDERS]
-
+    providers: [ROUTER_PROVIDERS]
 })
 
 export class AppComponent {

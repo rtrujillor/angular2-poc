@@ -28,7 +28,7 @@ describe('Smoke test', () => {
 /*
 describe('HeroesComponent with new', function () {
   it('should instantiate component', () => {
-    expect(new HeroesComponent(new HeroService() , new Router())).toBeDefined('Whoopie!');
+    expect(new HeroesComponent(new HeroService() , new Router()).toBeDefined('Whoopie!');
   });
 });
 */
