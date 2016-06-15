@@ -1,5 +1,5 @@
 import { HeroesComponent } from './heroes.component';
-import { HeroService } from './hero.service';
+import { HeroService } from './../../services/hero.service';
 
 import {
   expect, it, iit, xit,
@@ -24,12 +24,13 @@ describe('Smoke test', () => {
   });
 });
 
+/*
 describe('HeroesComponent with new', function () {
   it('should instantiate component', () => {
     expect(new HeroesComponent(new HeroService())).toBeDefined('Whoopie!');
   });
 });
-
+*/
 describe('HeroesComponent with TCB', function () {
 
   it('should instantiate component',

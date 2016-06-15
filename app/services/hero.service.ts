@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HEROES } from './mock-heroes'
+import { HEROES } from './../mocks/mock-heroes'
 
 /**
  * TypeScript sees the @Injectable() decorator and emits metadata about our service,

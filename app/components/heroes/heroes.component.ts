@@ -1,15 +1,15 @@
 import {Component , OnInit} from '@angular/core';
 import {Router} from '@angular/router-deprecated'
 
-import { Hero } from './hero';
-import {HeroDetailComponent} from './hero-detail.component';
-import { HeroService } from './hero.service';
+import { Hero } from './../../models/hero';
+import {HeroDetailComponent} from './../hero-detail/hero-detail.component';
+import { HeroService } from './../../services/hero.service';
 
 @Component({
 
   selector: 'my-heroes',
-  templateUrl: 'app/heroes.component.html',
-  styleUrls: ['app/heroes.component.css'],
+  templateUrl: 'app/components/heroes/heroes.component.html',
+  styleUrls: ['app/components/heroes/heroes.component.css'],
 
   /**
    * The providers array tells Angular to create a fresh instance of the HeroService when it creates a new AppComponent.
