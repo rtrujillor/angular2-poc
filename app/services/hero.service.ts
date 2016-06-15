@@ -7,11 +7,11 @@ import { HEROES } from './../mocks/mock-heroes'
  */
 @Injectable()
 export class  HeroService {
-  getHeroes(){
+  getHeroes() {
     return Promise.resolve(HEROES);
   }
 
-  getHero2( id : number ){
+  getHero2( id: number ) {
     return Promise.resolve(HEROES.filter(hero => hero.id === id)[0]);
   }
 

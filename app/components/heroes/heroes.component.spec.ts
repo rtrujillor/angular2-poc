@@ -14,9 +14,10 @@ import { By }             from '@angular/platform-browser';
 import { provide }        from '@angular/core';
 import { ViewMetadata }   from '@angular/core';
 import { PromiseWrapper } from '@angular/core/src/facade/promise';
+import { Router }         from '@angular/router-deprecated';
+
 
 ////////  SPECS  /////////////
-
 /// Delete this
 describe('Smoke test', () => {
   it('should run a passing test', () => {
@@ -27,7 +28,7 @@ describe('Smoke test', () => {
 /*
 describe('HeroesComponent with new', function () {
   it('should instantiate component', () => {
-    expect(new HeroesComponent(new HeroService())).toBeDefined('Whoopie!');
+    expect(new HeroesComponent(new HeroService() , new Router())).toBeDefined('Whoopie!');
   });
 });
 */

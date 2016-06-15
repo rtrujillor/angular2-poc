@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteParams } from '@angular/router-deprecated'
+import { RouteParams } from '@angular/router-deprecated';
 
 import { Hero } from './../../models/hero';
 import { HeroService } from './../../services/hero.service'
@@ -8,6 +8,7 @@ import { HeroService } from './../../services/hero.service'
   selector: 'my-hero-detail' ,
   templateUrl: 'app/components/hero-detail/hero-detail.component.html',
   styleUrls:['app/components/hero-detail/hero-detail.component.css']
+
 })
 
 export class HeroDetailComponent implements OnInit {
@@ -21,7 +22,7 @@ export class HeroDetailComponent implements OnInit {
    */
   constructor(
       private heroService: HeroService ,
-      private routeParams : RouteParams ) {
+      private routeParams: RouteParams ) {
   }
 
   /**
