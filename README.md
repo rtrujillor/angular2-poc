@@ -1,18 +1,12 @@
 [![Code Climate](https://codeclimate.com/repos/5761486356f44e006d006443/badges/5eb55389e31b6298494f/gpa.svg)](https://codeclimate.com/repos/5761486356f44e006d006443/feed)
 # Angular 2 QuickStart Source
 
-This repository holds the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
-the foundation for most of the documentation samples and potentially a good starting point for your application.
+This repository holds the TypeScript source code of the Tutorial [Tutoraial : Tour oh heroes ](https://angular.io/docs/ts/latest/tutorial/),
+the foundation for most of the documentation samples and potentially a good starting point for your ivestigations with Angular 2.
 
-It's been extended with testing support so you can start writing tests immediately, and has been reestructured to organize  the source files better
+It's been extended with testing support so you can start writing tests immediately, and has been reestructured to organize  the source files better.
 
-**This is not the perfect arrangement for your application. It is not designed for production. 
-It exists primarily to get you started quickly with learning and prototyping in Angular 2**
-
-We are unlikely to accept suggestions about how to grow this QuickStart into something it is not.
-Please keep that in mind before posting issues and PRs.
-
-## Create a new project based on the QuickStart
+## Create a new project based on the tutorial
 
 Clone this repo into new project folder (e.g., `my-proj`).
 ```bash
@@ -59,7 +53,7 @@ Here are the test related scripts:
 
 ## Testing
 
-The QuickStart documentation doesn't discuss testing. 
+The Tutorial documentation doesn't discuss testing. 
 This repo adds both karma/jasmine unit test and protractor end-to-end testing support.
 
 These tools are configured for specific conventions described below.
@@ -68,9 +62,9 @@ These tools are configured for specific conventions described below.
 We recommend that you shut down one before starting another.*
 
 ### Unit Tests
-TypeScript unit-tests are usually in the `app` folder. Their filenames must end in `.spec`.
+TypeScript unit-tests are usually under the `app` folder. Their filenames must end in `.spec`.
 
-Look for the example `app/app.component.spec.ts`.
+Look for the example `app/components/app/app.component.spec.ts`.
 Add more `.spec.ts` files as you wish; we configured karma to find them.
 
 Run it with `npm test`
@@ -86,6 +80,7 @@ Karma is occasionally confused and it is often necessary to shut down its browse
 restart it. No worries; it's pretty quick.
 
 The `HTML-Reporter` is also wired in. That produces a prettier output; look for it in `~_test-output/tests.html`.
+The `Coverage-Reporter` is also wired in. It produces its output in `~coverage/index.html`.
 
 ### End-to-end (E2E) Tests
 
@@ -94,7 +89,7 @@ The `HTML-Reporter` is also wired in. That produces a prettier output; look for 
 E2E tests are usually at the project root, above the `app` folder. 
 Their filenames must end in `e2e-spec.js`.
 
-E2E tests must be written in JavaScript (the author has not figured out how to write them in TS yet).
+E2E tests must be written in JavaScript.
 
 Look for the example `e2e-spec.ts` in the root folder.
 Add more `e2e-spec.js` files as you wish (although one usually suffices for small projects); 
