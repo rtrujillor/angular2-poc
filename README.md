@@ -1,7 +1,7 @@
 [![Code Climate](https://codeclimate.com/repos/5761486356f44e006d006443/badges/5eb55389e31b6298494f/gpa.svg)](https://codeclimate.com/repos/5761486356f44e006d006443/feed)
 # Angular 2 QuickStart Source
 
-This repository holds the TypeScript source code of the Tutorial [Tutoraial : Tour oh heroes ](https://angular.io/docs/ts/latest/tutorial/),
+This repository holds the TypeScript source code of the Tutorial [Tutorial : Tour of heroes ](https://angular.io/docs/ts/latest/tutorial/),
 the foundation for most of the documentation samples and potentially a good starting point for your ivestigations with Angular 2.
 
 It's been extended with testing support so you can start writing tests immediately, and has been reestructured to organize  the source files better.
