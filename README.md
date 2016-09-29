@@ -16,6 +16,8 @@ cd my-proj
 ## Working behind a proxy
 Under the proxy-config-examples directory, you can have some examples of configuration files for npm, git and typings (typescript) for not having problems executing the npm scripts behind a proxy, I had them!
 
+Those files should be on the user's root directory.
+
 ## Install npm packages
 
 Install the npm packages described in the `package.json` and verify that it works:
