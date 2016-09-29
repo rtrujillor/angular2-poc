@@ -13,6 +13,9 @@ Clone this repo into new project folder (e.g., `my-proj`).
 git clone  https://github.com/rtrujillor/angular2-poc.git  my-proj
 cd my-proj
 ```
+## Working behind a proxy
+Under the proxy-config-examples directory, you can have some examples of configuration files for npm, git and typings (typescript) for not having problems executing the npm scripts behind a proxy, I had them!
+
 ## Install npm packages
 
 Install the npm packages described in the `package.json` and verify that it works:
@@ -23,7 +26,6 @@ Install the npm packages described in the `package.json` and verify that it work
 npm install
 npm start
 ```
-
 The `npm start` command first compiles the application, 
 then simultaneously re-compiles and runs the `lite-server`.
 Both the compiler and the server watch for file changes.
@@ -31,8 +33,6 @@ Both the compiler and the server watch for file changes.
 Shut it down manually with Ctrl-C.
 
 You're ready to write your application.
-## Working behind a proxy
-Under the proxy-config-examples directory, you can have some examples of configuration files for npm, git and typings (typescript) for not having problems executing the npm scripts behind a proxy, I had them!
 
 ### npm scripts
 
