@@ -1,0 +1,6 @@
+[user]
+	name = rtrujillor@hotmail.com
+[credential]
+	helper = XXXXXXXX
+[http]
+	proxy = http://USER:PWD@IP:PORT
