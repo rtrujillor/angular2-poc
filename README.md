@@ -31,6 +31,8 @@ Both the compiler and the server watch for file changes.
 Shut it down manually with Ctrl-C.
 
 You're ready to write your application.
+## Working behind a proxy
+Under the proxy-config-examples directory, you can have some examples of configuration files for npm, git and typings (typescript) for not having problems executing the npm scripts behind a proxy, I had them!
 
 ### npm scripts
 
